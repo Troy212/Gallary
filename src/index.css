@@ -1,0 +1,284 @@
+/* ====== Global Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 20% 20%, #1a1f3a, #050816 60%);
+  color: #eaeaea;
+  overflow: hidden;
+}
+
+/* Optional subtle stars */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #c9a227 40%, transparent 41%),
+    radial-gradient(2px 2px at 70% 20%, #c9a227 40%, transparent 41%),
+    radial-gradient(2px 2px at 40% 80%, #c9a227 40%, transparent 41%),
+    radial-gradient(2px 2px at 85% 70%, #c9a227 40%, transparent 41%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ====== Card Container ====== */
+.container {
+  width: 380px;
+  padding: 40px 35px;
+  background: rgba(10, 14, 28, 0.85);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+/* ====== Logo Section ====== */
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo .star {
+  font-size: 22px;
+  color: #d4af37;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 6px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.logo p {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #8a8f9f;
+  margin-top: 8px;
+}
+
+/* ====== Tabs ====== */
+.tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tabs button.active {
+  background: linear-gradient(90deg, #b8962e, #d4af37);
+  color: #111;
+  font-weight: 500;
+}
+
+/* ====== Form ====== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8a8f9f;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  color: #eaeaea;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* ====== Button ====== */
+.submit-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #b8962e, #e0c36c);
+  color: #111;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+}
+
+.logo-icon {
+  font-size: 3rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.6rem;
+  animation: spin 10s linear infinite;
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.7),
+    0 0 25px rgba(212, 175, 55, 0.7),
+    0 0 50px rgba(212, 175, 55, 0.7);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Wrapper ===== */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 20% 20%, #1a1f3a, #050816 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Soft Gold Frame ===== */
+.form-frame {
+  padding: 2px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(212,175,55,0.6),
+    rgba(184,134,11,0.4),
+    rgba(212,175,55,0.6)
+  );
+  box-shadow:
+    0 0 40px rgba(212,175,55,0.15),
+    0 0 80px rgba(0,0,0,0.6);
+}
+
+/* ===== Card ===== */
+.auth-card {
+  width: 380px;
+  padding: 45px 40px;
+  border-radius: 22px;
+
+  /* Blended with background */
+  background: linear-gradient(
+    160deg,
+    rgba(15,20,40,0.95),
+    rgba(10,15,30,0.95)
+  );
+
+  backdrop-filter: blur(12px);
+
+  /* subtle separation */
+  box-shadow:
+    inset 0 0 30px rgba(255,255,255,0.02),
+    0 20px 50px rgba(0,0,0,0.7);
+
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== FULL PAGE STAR FIELD ===== */
+
+.flex.flex-col.items-center.justify-center.min-h-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Small distant stars */
+.flex.flex-col.items-center.justify-center.min-h-screen::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  height: 200%;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(1px 1px at 25% 15%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 75% 35%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 45% 75%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 15% 65%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 85% 85%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 25%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 35% 55%, #ffffff 50%, transparent 51%);
+
+  background-size: 250px 250px;
+  animation: starsSlow 160s linear infinite;
+  opacity: 0.7;
+}
+
+/* Medium + Gold stars */
+.flex.flex-col.items-center.justify-center.min-h-screen::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  height: 200%;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #d4af37 50%, transparent 51%),
+    radial-gradient(2px 2px at 60% 10%, #ffffff 50%, transparent 51%),
+    radial-gradient(2px 2px at 40% 50%, #d4af37 50%, transparent 51%),
+    radial-gradient(2px 2px at 80% 60%, #ffffff 50%, transparent 51%),
+    radial-gradient(2px 2px at 10% 90%, #d4af37 50%, transparent 51%),
+    radial-gradient(2px 2px at 70% 75%, #ffffff 50%, transparent 51%);
+
+  background-size: 350px 350px;
+  animation: starsFast 90s linear infinite;
+  opacity: 0.9;
+}
+
+/* Movement */
+@keyframes starsSlow {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1200px); }
+}
+
+@keyframes starsFast {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1500px); }
+}
+
+/* Keep form above stars */
+.form-frame {
+  position: relative;
+  z-index: 2;
+}
+
