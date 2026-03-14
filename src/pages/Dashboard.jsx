@@ -81,15 +81,7 @@ export default function Dashboard() {
     }
 
     // Insert message into DB (column = text)
-    if (message.trim() !== "") {
-      await supabase.from("photo_messages").insert([
-        {
-          user_id: user.id,
-          file_path: filePath,
-          text: message,
-        },
-      ]);
-    }
+    // message feature temporarily disabled
 
     setMessage("");
     setShowModal(false);
