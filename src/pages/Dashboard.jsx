@@ -95,7 +95,7 @@ export default function Dashboard() {
     setShowModal(false);
     setFile(null);
 
-    window.location.reload();
+    navigate("/dashboard");
   };
 
   const handleSignOut = async () => {
