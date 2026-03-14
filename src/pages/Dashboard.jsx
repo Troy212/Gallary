@@ -81,13 +81,22 @@ export default function Dashboard() {
     }
 
     // Insert message into DB (column = text)
-    // message feature temporarily disabled
+    if (message.trim() !== "") {
+      await supabase.from("photo_messages").insert([
+        {
+          user_id: user.id,
+          file_path: filePath,
+          text: message,
+        },
+      ]);
+    }
 
     setMessage("");
     setShowModal(false);
     setFile(null);
 
     window.location.reload();
+    navigate("/dashboard");
   };
 
   const handleSignOut = async () => {
